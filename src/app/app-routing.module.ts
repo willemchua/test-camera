@@ -6,8 +6,8 @@ import {AppComponent} from './app.component';
 import { PageComponent } from './page/page.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full'},
-  { path: 'home', component: PageComponent},
+  // { path: '', redirectTo: '/home', pathMatch: 'full'},
+  // { path: 'home', component: PageComponent},
   { path: 'camera', component: CameraComponent},
 ];
 

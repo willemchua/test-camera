@@ -7,12 +7,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CameraComponent } from './camera/camera.component';
 import { PageComponent } from './page/page.component';
+import { TestComponent } from './test/test.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CameraComponent,
-    PageComponent
+    PageComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,

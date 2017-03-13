@@ -4,11 +4,12 @@ import { Routes, RouterModule } from '@angular/router';
 import {CameraComponent} from './camera/camera.component';
 import {AppComponent} from './app.component';
 import { PageComponent } from './page/page.component';
-
+import { TestComponent } from './test/test.component';
 const routes: Routes = [
-  // { path: '', redirectTo: '/home', pathMatch: 'full'},
-  // { path: 'home', component: PageComponent},
+  { path: '', redirectTo: '/home', pathMatch: 'full'},
+  { path: 'home', component: PageComponent},
   { path: 'camera', component: CameraComponent},
+  { path: 'test', component: TestComponent},
 ];
 
 @NgModule({

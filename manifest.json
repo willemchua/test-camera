@@ -1,0 +1,10 @@
+{
+    "name": "TestPWA",
+    "short_name": "PWA",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "lightgreen",
+    "description": "an example before the real thing",
+    "orientation": "portrait-primary",
+    "scope": "/src/"
+}

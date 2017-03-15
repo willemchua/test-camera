@@ -74,4 +74,3 @@ import 'zone.js/dist/zone';  // Included with Angular CLI.
 import 'core-js/client/shim.min.js';
 
 import 'zone.js/dist/zone.js';
-import 'systemjs/dist/system.src.js';

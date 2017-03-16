@@ -1,1 +1,25 @@
-<router-outlet> </router-outlet>
+<div class="header">
+
+  <div id="button">
+    <span class="glyphicon glyphicon-menu-hamburger" (click) = toggle()></span>
+  </div>
+
+  ESS
+
+</div>
+
+<div *ngIf="showElement" class="menu-left" id="menu-left">
+    <nav>
+      <ul class="nav nav-pills nav-stacked">
+        <li><a href="/">Home</a></li>
+        <li>Payment Status</li>	
+        <li>Request Leave</li>
+        <li>Overtime Work</li>
+        <li>Reimbursement</li>
+      </ul>
+    </nav>
+</div>
+
+<div id="content">
+<router-outlet></router-outlet>
+</div>

@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppShellComponent implements OnInit {
 
+  showElement:boolean = false;
   constructor() { }
 
   ngOnInit() {
   }
+
+
 
 }

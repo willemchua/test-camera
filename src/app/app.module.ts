@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { CameraComponent } from './camera/camera.component';
 import { PageComponent } from './page/page.component';
 import { TestComponent } from './test/test.component';
+import { AppShellComponent } from './app-shell/app-shell.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CameraComponent,
     PageComponent,
-    TestComponent
+    TestComponent,
+    AppShellComponent
   ],
   imports: [
     BrowserModule,

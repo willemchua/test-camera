@@ -53,7 +53,6 @@ export class CalendarPageComponent implements OnInit {
         eventRender: function(event, element) {
                 if(event.description == "sick") {
                     element.css('border-color', '#827717');
-                    // element.css('background-color', '#827717 !important');
                 }else if(event.description == "paid") {
                     element.css('border-color', '#FFEB3B');
                 }else if(event.description == "holiday") {

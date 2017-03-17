@@ -20,7 +20,7 @@ import { Component, trigger, state, style, transition, animate } from '@angular/
 export class AppComponent {
   title = 'app works!';
 
-  menuState:string = 'out';
+  menuState:string = 'in';
     toggleMenu(){
       this.menuState = this.menuState === 'out' ? 'in' : 'out';
     }

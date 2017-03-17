@@ -33,11 +33,13 @@ a{
 
 #content{
     display: inline-block;
+	margin: 10px;
 }
 
 .app-title{
 	line-height:35px;
 	font-size: 25px;
 	margin-left:50px;
+	cursor: default;
 }
 

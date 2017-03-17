@@ -1,21 +1,21 @@
 <div class="header">
 
   <div id="button">
-    <span class="glyphicon glyphicon-menu-hamburger" (click) = toggle()></span>
+    <span class="glyphicon glyphicon-menu-hamburger" (click) = toggleMenu()></span>
   </div>
 
-  ESS
+  <div class="app-title">ESS</div>
 
 </div>
 
-<div *ngIf="showElement" class="menu-left" id="menu-left">
+<div [@slideInOut]='menuState' class="menu-left" id="menu-left">
     <nav>
       <ul class="nav nav-pills nav-stacked">
         <li><a href="/">Home</a></li>
-        <li>Payment Status</li>	
-        <li>Request Leave</li>
-        <li>Overtime Work</li>
-        <li>Reimbursement</li>
+        <li><a href="#">Payment Status</a></li>	
+        <li><a href="#">Request Leave</a></li>
+        <li><a href="#">Overtime Work</a></li>
+        <li><a href="#">Reimbursement</a></li>
       </ul>
     </nav>
 </div>

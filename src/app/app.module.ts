@@ -8,7 +8,6 @@ import { AppComponent } from './app.component';
 import { CameraComponent } from './camera/camera.component';
 import { PageComponent } from './page/page.component';
 import { TestComponent } from './test/test.component';
-import { AppShellComponent } from './app-shell/app-shell.component';
 import { CalendarComponent } from './calendar/calendar.component';
 
 @NgModule({
@@ -17,7 +16,6 @@ import { CalendarComponent } from './calendar/calendar.component';
     CameraComponent,
     PageComponent,
     TestComponent,
-    AppShellComponent,
     CalendarComponent
   ],
   imports: [

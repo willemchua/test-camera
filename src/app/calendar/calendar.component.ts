@@ -20,59 +20,45 @@ export class CalendarPageComponent implements OnInit {
         eventLimit: true, // allow "more" link when too many events
         events: [
           {
-            title: 'All Day Event',
+            title: 'Sick Leave',
+            description:'sick',
             start: '2016-09-01'
           },
           {
-            title: 'Long Event',
+            title: 'Paid leave',
+            description:'paid',
             start: '2016-09-07',
             end: '2016-09-10'
           },
           {
             id: 999,
             title: 'Repeating Event',
+            description:'holiday',
             start: '2016-09-09T16:00:00'
           },
           {
             id: 999,
             title: 'Repeating Event',
+            description:'holiday',
             start: '2016-09-16T16:00:00'
           },
-          {
-            title: 'Conference',
-            start: '2016-09-11',
-            end: '2016-09-13'
-          },
-          {
-            title: 'Meeting',
-            start: '2016-09-12T10:30:00',
-            end: '2016-09-12T12:30:00'
-          },
-          {
-            title: 'Lunch',
-            start: '2016-09-12T12:00:00'
-          },
-          {
-            title: 'Meeting',
-            start: '2016-09-12T14:30:00'
-          },
-          {
-            title: 'Happy Hour',
-            start: '2016-09-12T17:30:00'
-          },
-          {
-            title: 'Dinner',
-            start: '2016-09-12T20:00:00'
-          },
-          {
-            title: 'Birthday Party',
-            start: '2016-09-13T07:00:00'
-          },
+          
           {
             title: 'Click for Google',
             url: 'http://google.com/',
+            description:'url',
             start: '2016-09-28'
           }
-        ]
+        ],
+        eventRender: function(event, element) {
+                if(event.description == "sick") {
+                    element.css('border-color', '#827717');
+                    // element.css('background-color', '#827717 !important');
+                }else if(event.description == "paid") {
+                    element.css('border-color', '#FFEB3B');
+                }else if(event.description == "holiday") {
+                    element.css('border-color', '#BF360C');
+                }
+        }
       };
 }

@@ -1,4 +1,6 @@
 import { NgModule, Component, OnInit } from '@angular/core';
+import * as $ from 'jquery';
+import 'fullcalendar';
 
 @Component({
   selector: 'app-calendar',
@@ -6,10 +8,14 @@ import { NgModule, Component, OnInit } from '@angular/core';
   styleUrls: ['./calendar.component.css']
 })
 export class CalendarPageComponent implements OnInit {
-
+  sampleEvent = {title:'halo',description:'test',start:'2016-09-20'};
   constructor() { }
 
   ngOnInit() {
+    // console.log(this.calendarOptions["events"][0].title);
+    console.log(this.calendarOptions["events"]);
+    this.calendarOptions["events"].push(this.sampleEvent);
+    console.log(this.calendarOptions["events"]);
   }
 
   calendarOptions:Object = {
@@ -53,11 +59,15 @@ export class CalendarPageComponent implements OnInit {
         eventRender: function(event, element) {
                 if(event.description == "sick") {
                     element.css('border-color', '#827717');
+                    element.css('background-color', '#827717');
                 }else if(event.description == "paid") {
                     element.css('border-color', '#FFEB3B');
+                    element.css('background-color', '#FFEB3B');
                 }else if(event.description == "holiday") {
                     element.css('border-color', '#BF360C');
+                    element.css('background-color', '#BF360C');
                 }
         }
       };
+
 }

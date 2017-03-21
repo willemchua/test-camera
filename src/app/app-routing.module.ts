@@ -7,7 +7,7 @@ import {AppComponent} from './app.component';
 import { PageComponent } from './page/page.component';
 import { TestComponent } from './test/test.component';
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full'},
+  { path: '', component: PageComponent},
   { path: 'home', component: PageComponent},
   { path: 'camera', component: CameraComponent},
   { path: 'calendar', component: CalendarPageComponent},

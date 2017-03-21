@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, Route } from '@angular/router';
 
 @Component({
   selector: 'app-page',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageComponent implements OnInit {
 
-  constructor() { }
+  redir:string;
+  constructor(public router:Router) { }
 
   ngOnInit() {
   }
 
+  redirectTo(key)
+  {
+    if(key === 1)
+      this.router.navigateByUrl("/camera", { skipLocationChange: true });
+    else if(key === 2)
+      this.router.navigateByUrl("/calendar", { skipLocationChange: true });
+    else
+      this.router.navigateByUrl("/test", { skipLocationChange: true });
+  }
 }

@@ -1,3 +1,11 @@
-<p>
-  test works!
-</p>
+<select [(ngModel)] = "selectedValue" (change) = "valid(selectedValue)">
+<option *ngFor="let menu of menus" value = "{{menu}}">{{menu}}</option>
+</select>
+
+<div *ngIf="menu1">
+    Hai Ini Menu 1
+</div>
+
+<div *ngIf="menu2">
+    Halo Itu Menu 2
+</div>

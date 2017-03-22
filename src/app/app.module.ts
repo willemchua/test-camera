@@ -11,6 +11,7 @@ import { PageComponent } from './page/page.component';
 import { TestComponent } from './test/test.component';
 import { CalendarPageComponent } from "./calendar/calendar.component";
 import { CalendarComponent } from "angular2-fullcalendar/src/calendar/calendar";
+import { RxjsComponent } from './rxjs/rxjs.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { CalendarComponent } from "angular2-fullcalendar/src/calendar/calendar";
     PageComponent,
     TestComponent,
     CalendarPageComponent,
-    CalendarComponent
+    CalendarComponent,
+    RxjsComponent
   ],
   imports: [
     BrowserModule,

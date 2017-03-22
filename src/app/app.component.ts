@@ -1,4 +1,4 @@
-import { Component, trigger, state, style, transition, animate } from '@angular/core';
+import { Component, trigger, state, style, transition, animate, OnInit, DoCheck } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -18,14 +18,30 @@ import { Router } from '@angular/router';
     ]),
   ]
 })
-export class AppComponent {
+export class AppComponent implements DoCheck{
   title = 'app works!';
+  online:string;
+  showThings: boolean = false;
+  tulisan:string;
+  onlineCheck: boolean;
 
   constructor(public router:Router){}
+
+  ngDoCheck(){
+    window.addEventListener('online', () => {this.online = 'App is online';});
+
+    window.addEventListener('offline', () => {this.online = 'App is offline';});
+
+    if(!this.showThings)
+      this.tulisan = 'Ceritanya jalan';
+    else
+      this.tulisan = 'Ceritanya ga jalan';
+  }
 
   menuState:string = 'in';
     toggleMenu(){
       this.menuState = this.menuState === 'out' ? 'in' : 'out';
+      this.showThings = !this.showThings;
     }
 
     toggleMenu2(){

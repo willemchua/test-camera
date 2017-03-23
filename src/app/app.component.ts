@@ -1,5 +1,6 @@
 import { Component, trigger, state, style, transition, animate, OnInit, DoCheck } from '@angular/core';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs/Rx';
 
 @Component({
   selector: 'app-root',
@@ -23,14 +24,22 @@ export class AppComponent implements DoCheck{
   online:string;
   showThings: boolean = false;
   tulisan:string;
-  onlineCheck: boolean;
+  
 
   constructor(public router:Router){}
 
-  ngDoCheck(){
-    window.addEventListener('online', () => {this.online = 'App is online';});
+  ngOnInit(){
+    this.online = navigator.onLine?'App is online':'App is offline';
+    // Observable.fromEvent(window, 'online').subscribe(() => this.online = 'App is online x');
+    // Observable.fromEvent(window, 'offline').subscribe(() => this.online = 'App is offline x');
+  }
 
-    window.addEventListener('offline', () => {this.online = 'App is offline';});
+  ngDoCheck(){
+    // window.addEventListener('online', () => {this.online = 'App is online';});
+    // window.addEventListener('offline', () => {this.online = 'App is offline';});
+
+    Observable.fromEvent(window, 'online').subscribe(() => this.online = 'App is online loh');
+    Observable.fromEvent(window, 'offline').subscribe(() => this.online = 'App is offline loh');
 
     if(!this.showThings)
       this.tulisan = 'Ceritanya jalan';
@@ -49,11 +58,7 @@ export class AppComponent implements DoCheck{
     }
 
   redirectTo(key:any){
-    if(key === 1)
-      {
-        this.router.navigateByUrl("/home", { skipLocationChange: true });
-        //this.router.navigate(['/home']);
+        this.router.navigateByUrl(key, {skipLocationChange: true} )
         this.toggleMenu();
-      }
   }
 }

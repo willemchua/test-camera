@@ -16,6 +16,7 @@ export class PageComponent implements OnInit {
 
   redirectTo(key)
   {
+<<<<<<< HEAD
     this.router.navigateByUrl(key, { skipLocationChange: true })
     // if(key === 1)
     //   this.router.navigateByUrl("/camera", { skipLocationChange: true });
@@ -25,5 +26,8 @@ export class PageComponent implements OnInit {
     //   this.router.navigateByUrl("/test", { skipLocationChange: true });
     // else if(key === 4)
     //   this.router.navigateByUrl("/rxjs", { skipLocationChange: true });
+=======
+    this.router.navigateByUrl(key, {skipLocationChange: true} )
+>>>>>>> a2827bbda2bf141c54d480fd530154e23c3cf4b4
   }
 }

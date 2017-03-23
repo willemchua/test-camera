@@ -12,6 +12,10 @@ import { TestComponent } from './test/test.component';
 import { CalendarPageComponent } from "./calendar/calendar.component";
 import { CalendarComponent } from "angular2-fullcalendar/src/calendar/calendar";
 import { RxjsComponent } from './rxjs/rxjs.component';
+import { StateManagementComponent } from './state-management/state-management.component';
+import { SubcomponentComponent } from './state-management/subcomponent/subcomponent.component';
+import { SubsubcomponentComponent } from './state-management/subcomponent/subsubcomponent/subsubcomponent.component';
+import { SubsubsubcomponentComponent } from './state-management/subcomponent/subsubcomponent/subsubsubcomponent/subsubsubcomponent.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +25,11 @@ import { RxjsComponent } from './rxjs/rxjs.component';
     TestComponent,
     CalendarPageComponent,
     CalendarComponent,
-    RxjsComponent
+    RxjsComponent,
+    StateManagementComponent,
+    SubcomponentComponent,
+    SubsubcomponentComponent,
+    SubsubsubcomponentComponent
   ],
   imports: [
     BrowserModule,

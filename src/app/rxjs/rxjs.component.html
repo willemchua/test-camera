@@ -1,3 +1,6 @@
 <p>
   rxjs works!
 </p>
+<input type="text" #testString (keyup)="0">
+<button (click)="pushNum(testString.value)">Send Number</button>
+<button (click)="completeSubA()">Dispose Subject A</button>

@@ -16,11 +16,6 @@ export class PageComponent implements OnInit {
 
   redirectTo(key)
   {
-    if(key === 1)
-      this.router.navigateByUrl("/camera", { skipLocationChange: true });
-    else if(key === 2)
-      this.router.navigateByUrl("/calendar", { skipLocationChange: true });
-    else
-      this.router.navigateByUrl("/test", { skipLocationChange: true });
+    this.router.navigateByUrl(key, {skipLocationChange: true} )
   }
 }

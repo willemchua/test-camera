@@ -17,6 +17,9 @@ import { SubcomponentComponent } from './state-management/subcomponent/subcompon
 import { SubsubcomponentComponent } from './state-management/subcomponent/subsubcomponent/subsubcomponent.component';
 import { SubsubsubcomponentComponent } from './state-management/subcomponent/subsubcomponent/subsubsubcomponent/subsubsubcomponent.component';
 
+import { StoreModule } from '@ngrx/store';
+import { counterReducer, profileNameReducer } from './state-management/state-management';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +39,8 @@ import { SubsubsubcomponentComponent } from './state-management/subcomponent/sub
     FormsModule,
     HttpModule,
     AppRoutingModule,
-    MomentModule
+    MomentModule,
+    StoreModule.provideStore({ counter: counterReducer, name: profileNameReducer })
   ],
   providers: [],
   bootstrap: [AppComponent]

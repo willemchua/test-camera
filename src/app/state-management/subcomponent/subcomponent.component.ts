@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-subcomponent',
@@ -6,11 +6,11 @@ import { Component, OnInit } from '@angular/core';
     <p>
       subcomponent Works!
     </p>
+    <app-subsubcomponent></app-subsubcomponent>
   `,
   styles: []
 })
 export class SubcomponentComponent implements OnInit {
-
   constructor() { }
 
   ngOnInit() {

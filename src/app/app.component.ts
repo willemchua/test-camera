@@ -1,6 +1,7 @@
 import { Component, trigger, state, style, transition, animate, OnInit, DoCheck } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Rx';
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-root',
@@ -24,9 +25,13 @@ export class AppComponent implements DoCheck{
   online:string;
   showThings: boolean = false;
   tulisan:string;
-  
+  counter:Observable<number>;
+  profileName:Observable<string>;
 
-  constructor(public router:Router){}
+  constructor(public router:Router,private store:Store<any>){
+    this.counter = store.select('counter');
+    this.profileName = store.select('name');
+  }
 
   ngOnInit(){
     this.online = navigator.onLine?'App is online':'App is offline';
@@ -61,4 +66,5 @@ export class AppComponent implements DoCheck{
         this.router.navigateByUrl(key, {skipLocationChange: true} )
         this.toggleMenu();
   }
+
 }

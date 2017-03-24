@@ -8,6 +8,8 @@
   <div class="app-title">ESS</div>
 
   <div class="online-state">{{online}} {{tulisan}}</div>
+
+  <div class="counter">|Profile:{{profileName | async}}| Counter: {{counter | async}}</div>
 </div>
 
 <div [@slideInOut]='menuState' class="menu-left" id="menu-left">

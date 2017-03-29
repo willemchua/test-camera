@@ -5,7 +5,7 @@ import { ISearch } from '../shared/page.interface';
 
 const initialState = {
     query: "",
-    maxOutput: 0
+    maxOutput: '3'
 }
 
 export function counterReducer(state:number = 0, action:Action){
@@ -49,7 +49,7 @@ export function searchReducer(state: ISearch = initialState, action: Action){
         case "RESET":
             let initialState: ISearch = {
                 query: "",
-                maxOutput: 0
+                maxOutput: '3'
             }
             return initialState;
         default:

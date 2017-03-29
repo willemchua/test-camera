@@ -25,12 +25,12 @@ export class AppComponent implements DoCheck{
   online:string;
   showThings: boolean = false;
   tulisan:string;
-  counter:Observable<number>;
-  profileName:Observable<string>;
+  counter: number = 0;
+  profileName: string;
 
   constructor(public router:Router,private store:Store<any>){
-    this.counter = store.select('counter');
-    this.profileName = store.select('name');
+    this.store.select('name').subscribe((x:string) => this.profileName = x);
+    this.store.select('counter').subscribe((x:number) => this.counter = x);
   }
 
   ngOnInit(){

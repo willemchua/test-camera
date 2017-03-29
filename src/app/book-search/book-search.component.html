@@ -1,0 +1,10 @@
+Book Search
+<br>
+Show Results:
+<searchbox> </searchbox>
+<br>
+<div *ngFor = "let book of books">
+    <ul>
+    <li>{{book.volumeInfo.title}}</li>
+    </ul>
+</div>

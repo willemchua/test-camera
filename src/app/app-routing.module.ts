@@ -8,6 +8,7 @@ import { PageComponent } from './page/page.component';
 import { TestComponent } from './test/test.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { StateManagementComponent } from './state-management/state-management.component';
+import { BookSearchComponent } from './book-search/book-search.component';
 
 const routes: Routes = [
   { path: '', component: PageComponent},
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'test', component: TestComponent},
   { path: 'rxjs', component: RxjsComponent},
   { path: 'state-management', component: StateManagementComponent},
+  { path: 'book-search', component: BookSearchComponent}
 ];
 
 @NgModule({

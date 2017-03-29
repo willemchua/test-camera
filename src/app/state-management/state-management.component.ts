@@ -1,6 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild,Inject } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Rx';
+import { YouTubeAPI } from './state-management.service';
+import { FormControl } from '@angular/forms';
+
+class Item{
+  name:string;
+  description:string;
+}
 
 @Component({
   selector: 'app-state-management',
@@ -9,15 +16,29 @@ import { Observable } from 'rxjs/Rx';
 })
 
 export class StateManagementComponent implements OnInit {
-  profileName:Observable<string>;
+  profileName:string;
   counter:Observable<number>;
-
-  constructor(private store:Store<any>) {
+  results: Observable<any>;
+  searchControl = new FormControl();
+  
+  constructor(private store:Store<any>, private youtube:YouTubeAPI) {
     this.counter = store.select('counter');
-    this.profileName = store.select('name');
+    this.store.select('name').subscribe((name:string) => { this.profileName = name });
+    this.store.subscribe((state: any) => { console.log(state); });
+
+
+    //observable of results
+    this.results = 
+    //input value change observable
+      this.searchControl.valueChanges
+        .debounceTime(200) //debounce for 200ms
+        .switchMap(query => youtube.search(query));
+        //switchMap flattens the async and cancels the pending request if a new value is requested
+    
    }
 
   ngOnInit() {
   }
-
+  
 }
+  

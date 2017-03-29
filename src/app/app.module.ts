@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import {MomentModule} from 'angular2-moment/moment.module'
 
@@ -20,6 +20,7 @@ import { SubsubsubcomponentComponent } from './state-management/subcomponent/sub
 import { StoreModule } from '@ngrx/store';
 import { counterReducer, profileNameReducer } from './state-management/state-management';
 
+import { YouTubeAPI } from './state-management/state-management.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,12 +38,13 @@ import { counterReducer, profileNameReducer } from './state-management/state-man
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     AppRoutingModule,
     MomentModule,
     StoreModule.provideStore({ counter: counterReducer, name: profileNameReducer })
   ],
-  providers: [],
+  providers: [YouTubeAPI],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

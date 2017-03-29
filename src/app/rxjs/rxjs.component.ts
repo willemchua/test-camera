@@ -1,4 +1,4 @@
-import { Component, OnInit, DoCheck, OnChanges, ViewChild } from '@angular/core';
+import { Component, OnInit, DoCheck, OnChanges, ViewChild, ElementRef } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Subject} from 'rxjs/Rx';
 
@@ -34,43 +34,18 @@ export class RxjsComponent implements OnInit, DoCheck, OnChanges {
       error: err => console.error('something wrong occurred: ' + err),
       complete: () => console.log('B done'),
     });
-    // this.subject.subscribe({
-    //   next: (x) => console.log(x)
-    // });
 
-    // this.subject.subscribe({
-    //   next: (x) => {
-    //     if(x > 4){
-    //       //console.log('ini juga jalan');
-    //       (document.getElementById("btnClick") as HTMLButtonElement).setAttribute('disabled', 'disabled');
-    //     }
-    //     else{
-    //       //console.log('ini baru jalan');
-    //       (document.getElementById("btnClick") as HTMLButtonElement).removeAttribute('disabled');
-    //     }
-    //   }
-    // });
-    
-    // let stream$ = new Observable(observer => {
-    //   let count = 0;
-    //   setInterval(() => {
-    //     observer.next(count++);
-    //   }, 500);
-    // });
+    // let button = document.getElementById("btnClick");
+    // let text = document.getElementById("name");
 
-    // stream$.map((value:number) => value*value*value*value*value).subscribe(value => console.log(value));
-
-    let button = document.getElementById("btnClick");
-    let text = document.getElementById("name");
-
-    Observable.fromEvent(text, 'change').subscribe((event) => {
+    // Observable.fromEvent(text, 'change').subscribe((event) => {
       
-      console.log('ini jalan');
-      if((text as HTMLInputElement).value.length > 4)
-        (button as HTMLButtonElement).disabled = true;
-      else
-        (button as HTMLButtonElement).disabled = false;
-    });
+    //   console.log('ini jalan');
+    //   if((text as HTMLInputElement).value.length > 4)
+    //     (button as HTMLButtonElement).disabled = true;
+    //   else
+    //     (button as HTMLButtonElement).disabled = false;
+    // });
 
 
 
@@ -80,34 +55,23 @@ export class RxjsComponent implements OnInit, DoCheck, OnChanges {
   }
 
   ngDoCheck(){
-
-    // this.observable = new Subject(observer => {
-    //   console.log('hai');
-    //   observer.next(this.text.length);
-    // });
-
-    // let subscription = this.observable.subscribe(
-    //   x => {
-    //     console.log('ini jalan');
-    //     console.log(x);
-    //     if(x > 4){
-    //       console.log('ini juga jalan');
-    //       (document.getElementById("btnClick") as HTMLButtonElement).disabled = true;
-    //     }
-    //     else{
-    //       console.log('ini baru jalan');
-    //       (document.getElementById("btnClick") as HTMLButtonElement).disabled = false;
-    //     }
-    //   }
-    // )
-
-    //this.subject.next(this.text);
   }
 
-  doClick()
+  doClick(text:string, button:any)
   {
-    this.str = "Hai";
+    if(text.length < 4)
+      this.str = text;
+    else
+      this.str = "Hai";
+  }
 
+  doShit(text:string)
+  {
+    if(text.length > 4){
+      this.btnSubmit.nativeElement.disabled = true;
+      }
+    else
+      this.btnSubmit.nativeElement.disabled = false;
   }
 
   pushNum(num){

@@ -9,13 +9,9 @@ import { Observable } from 'rxjs/Rx';
 })
 
 export class StateManagementComponent implements OnInit {
-  profileName:Observable<string>;
-  counter:Observable<number>;
 
   constructor(private store:Store<any>) {
-    this.counter = store.select('counter');
-    this.profileName = store.select('name');
-   }
+  }
 
   ngOnInit() {
   }

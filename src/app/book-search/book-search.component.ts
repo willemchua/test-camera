@@ -17,9 +17,6 @@ import 'rxjs/add/operator/toPromise';
 export class BookSearchComponent implements OnInit {
   text$: Observable<ISearch>;
   books$: Observable<Book[]>;
-  search$: Observable<Book[]>;
-  books: Book[];
-  text: string;
   
   constructor(private bookService: GoogleBookService, private store: Store<any>) {
 

@@ -13,9 +13,14 @@ export class GoogleBookService {
     let query = input.query;
     let maxRes = input.maxOutput;
     //console.log('Human Stupidity Checker getData');
-    return this.http.get(`https://www.googleapis.com/books/v1/volumes?q=${query}&maxResults=${maxRes}`)
-      .map(res => {
-        return res.json().items || []});
+    //if(query !== "")
+      return this.http.get(`https://www.googleapis.com/books/v1/volumes?q=${query}&maxResults=${maxRes}`)
+        .map(res => {
+          return res.json().items || []});
+    // else{
+    //     return Observable.from([]);
+    // }
+
   }
 
 

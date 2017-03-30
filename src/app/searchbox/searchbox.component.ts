@@ -34,13 +34,12 @@ export class SearchboxComponent implements OnInit {
           type: "UPDATE_QUERY",
           payload: input
         })
-      else
-        this.store.dispatch({
+      else{
+          this.store.dispatch({
           type: "RESET"
         })
+        }
     }
-    // console.log('After:');
-    // console.log(this.store.select('search'));
 
   }
 

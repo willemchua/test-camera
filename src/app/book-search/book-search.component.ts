@@ -22,32 +22,19 @@ export class BookSearchComponent implements OnInit {
   text: string;
   
   constructor(private bookService: GoogleBookService, private store: Store<any>) {
-    this.store.select('search').subscribe((x:ISearch) => {
-      //console.log(x);
-      this.bookService.getData(x).subscribe((res:Book[]) => {
-        //console.log(res);
-        this.books = res;
-      });
-      console.log(this.books);
-    });
-    //this.search$ = this.bookService.getData(this.text$);
+
   }
 
   ngOnInit() {
+    this.store.select('search').subscribe((x:ISearch) => {
+       //console.log(x);
+      if(x.query !== "")
+        this.books$ = this.bookService.getData(x).map(res => {
+          //console.log(res);
+          return res});
+      else
+        this.books$ = Observable.of([]);
+    });
   }
-
-  // doStuff(text, number){
-  //   //console.log('Human Stupidity Checker doStuff');
-
-  //   if(text)
-  //     setTimeout(this.bookService.getData(text.query, text.maxOutput).subscribe(
-  //       res => {
-  //         console.log();
-  //         this.books = res;
-  //       }
-  //     ),1000)
-  //   else
-  //     this.books = null;
-  // }
 
 }

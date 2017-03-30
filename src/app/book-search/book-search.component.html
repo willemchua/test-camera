@@ -5,7 +5,7 @@ Show Results:
 <br>
 {{text}}
 <br>
-<div *ngFor = "let book of books">
+<div *ngFor = "let book of books$ | async">
     halo halo
     <ul>
     <li>{{book.volumeInfo.title}}</li>

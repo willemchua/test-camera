@@ -43,6 +43,7 @@ export class SubsubsubcomponentComponent implements OnInit {
       newState: profileName
     }});
   }
+  
   resetProfileName(){
     this.store.dispatch({type:"RESET_NAME"});
   }

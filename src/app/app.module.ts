@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { MomentModule } from 'angular2-moment/moment.module';
-import { MaterialModule } from '@angular/material';
+// import { MaterialModule } from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,7 +19,7 @@ import { SubsubcomponentComponent } from './state-management/subcomponent/subsub
 import { SubsubsubcomponentComponent } from './state-management/subcomponent/subsubcomponent/subsubsubcomponent/subsubsubcomponent.component';
 
 import { StoreModule } from '@ngrx/store';
-import { counterReducer, profileNameReducer, searchReducer } from './reducer/reducer';
+import { counterReducer, profileNameReducer, searchReducer, youtubeSearchReducer } from './reducer/reducer';
 import { BookSearchComponent } from './book-search/book-search.component';
 import { SearchboxComponent } from './searchbox/searchbox.component';
 
@@ -47,11 +47,13 @@ import { YouTubeAPI } from './state-management/state-management.service';
     HttpModule,
     AppRoutingModule,
     MomentModule,
-    StoreModule.provideStore({ counter: counterReducer
-      , name: profileNameReducer
-      , search: searchReducer 
+    StoreModule.provideStore({ 
+      counter: counterReducer,
+      name: profileNameReducer,
+      search: searchReducer ,
+      youtubeq: youtubeSearchReducer
     }),
-    MaterialModule
+    // MaterialModule
   ],
   providers: [YouTubeAPI],
   bootstrap: [AppComponent]

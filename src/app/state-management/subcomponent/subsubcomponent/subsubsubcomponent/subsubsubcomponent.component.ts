@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Rx';
+import { YouTubeAPI } from './../../../state-management.service';
 
 @Component({
   selector: 'app-subsubsubcomponent',
@@ -15,12 +16,21 @@ import { Observable } from 'rxjs/Rx';
     <button (click) = "increment()">Increment</button>
     <button (click) = "decrement()">Decrement</button>
     <button (click) = "reset()">Reset</button>
+
+    <div class="youtube-video-lists" *ngFor="let video of results | async">
+      <h3>{{video.snippet.title}}</h3>
+      <p>{{video.snippet.description}}</p>
+      <img src="{{video.snippet.thumbnails.default.url}}">
+    </div>
   `,
   styles: []
 })
 export class SubsubsubcomponentComponent implements OnInit {
-
-  constructor(private store:Store<any>) {
+  results: Observable<any>;
+  constructor(private store:Store<any>, private youtube:YouTubeAPI) {
+    this.store.select('youtubeq').subscribe((q:string) => { 
+      this.results = this.youtube.search(q);
+     });
   }
 
   ngOnInit() {

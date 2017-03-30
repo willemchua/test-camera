@@ -56,3 +56,12 @@ export function searchReducer(state: ISearch = initialState, action: Action){
             return state;
     }
 }
+
+export function youtubeSearchReducer(state:string = "", action:Action ){
+    switch(action.type){
+        case "UPDATE_Y_QUERY":
+            state = action.payload.q;
+            return state;
+
+    }
+}

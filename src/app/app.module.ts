@@ -24,6 +24,7 @@ import { BookSearchComponent } from './book-search/book-search.component';
 import { SearchboxComponent } from './searchbox/searchbox.component';
 
 import { YouTubeAPI } from './state-management/state-management.service';
+import { DashComponent } from './dash/dash.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +39,8 @@ import { YouTubeAPI } from './state-management/state-management.service';
     SubsubcomponentComponent,
     SubsubsubcomponentComponent,
     BookSearchComponent,
-    SearchboxComponent
+    SearchboxComponent,
+    DashComponent
   ],
   imports: [
     BrowserModule,

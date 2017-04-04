@@ -3,8 +3,10 @@ Book Search
 Show Results:
 <searchbox> </searchbox>
 <br>
-<div *ngFor = "let book of books">
-    <ul>
-    <li>{{book.volumeInfo.title}}</li>
-    </ul>
+<div *ngFor = "let book of books$ | async">
+    <a href="{{book.volumeInfo.previewLink}}" target="_blank">{{book.volumeInfo.title}}</a>
+    <br>
+
+    <p>{{book.volumeInfo.description}}</p>
+    <p *ngIf = !book.volumeInfo.description>No description available</p>
 </div>

@@ -5,6 +5,10 @@ import { HttpModule } from '@angular/http';
 import { MomentModule } from 'angular2-moment/moment.module';
 import { MaterialModule } from '@angular/material';
 
+import { AccordionModule } from 'primeng/primeng';     //accordion and accordion tab
+import { MenuItem } from 'primeng/primeng';            //api
+import { ChartModule } from 'primeng/primeng';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CameraComponent } from './camera/camera.component';
@@ -53,7 +57,9 @@ import { DashComponent } from './dash/dash.component';
       , name: profileNameReducer
       , search: searchReducer 
     }),
-    MaterialModule
+    MaterialModule,
+    AccordionModule,
+    ChartModule
   ],
   providers: [YouTubeAPI],
   bootstrap: [AppComponent]

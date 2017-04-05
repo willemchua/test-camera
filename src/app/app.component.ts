@@ -21,7 +21,6 @@ import { Store } from '@ngrx/store';
   ]
 })
 export class AppComponent implements DoCheck{
-  title = 'app works!';
   online:string;
   showThings: boolean = false;
   tulisan:string;
@@ -35,17 +34,11 @@ export class AppComponent implements DoCheck{
 
   ngOnInit(){
     this.online = navigator.onLine?'App is online':'App is offline';
-    // Observable.fromEvent(window, 'online').subscribe(() => this.online = 'App is online x');
-    // Observable.fromEvent(window, 'offline').subscribe(() => this.online = 'App is offline x');
+    Observable.fromEvent(window, 'online').subscribe(() => this.online = 'App is online loh');
+    Observable.fromEvent(window, 'offline').subscribe(() => this.online = 'App is offline loh');
   }
 
   ngDoCheck(){
-    // window.addEventListener('online', () => {this.online = 'App is online';});
-    // window.addEventListener('offline', () => {this.online = 'App is offline';});
-
-    Observable.fromEvent(window, 'online').subscribe(() => this.online = 'App is online loh');
-    Observable.fromEvent(window, 'offline').subscribe(() => this.online = 'App is offline loh');
-
     if(!this.showThings)
       this.tulisan = 'Ceritanya jalan';
     else
@@ -53,18 +46,18 @@ export class AppComponent implements DoCheck{
   }
 
   menuState:string = 'in';
-    toggleMenu(){
-      this.menuState = this.menuState === 'out' ? 'in' : 'out';
-      this.showThings = !this.showThings;
-    }
+  toggleMenu(){
+    this.menuState = this.menuState === 'out' ? 'in' : 'out';
+    this.showThings = !this.showThings;
+  }
 
-    toggleMenu2(){
-      this.menuState = this.menuState === 'out' ? 'in' : 'out';
-    }
+  toggleMenu2(){
+    this.menuState = this.menuState === 'out' ? 'in' : 'out';
+  }
 
   redirectTo(key:any){
-        this.router.navigateByUrl(key)
-        this.toggleMenu();
+    this.router.navigateByUrl(key)
+    this.toggleMenu();
   }
 
 }

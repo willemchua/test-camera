@@ -10,7 +10,7 @@ export interface State{
 
 const initialState = {
     counter: 0,
-    name: ''
+    name: 'undefined'
 }
 
 export function reducer(state:State = initialState, action:Action){

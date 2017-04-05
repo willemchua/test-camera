@@ -9,10 +9,12 @@ import { TestComponent } from './test/test.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { StateManagementComponent } from './state-management/state-management.component';
 import { BookSearchComponent } from './book-search/book-search.component';
+import { DashComponent } from './dash/dash.component';
 
 const routes: Routes = [
   { path: '', component: PageComponent},
   { path: 'home', component: PageComponent},
+  { path: 'dash', component: DashComponent},
   { path: 'camera', component: CameraComponent},
   { path: 'calendar', component: CalendarPageComponent},
   { path: 'test', component: TestComponent},

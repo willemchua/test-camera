@@ -29,8 +29,8 @@ export class AppComponent implements DoCheck{
   profileName: string;
 
   constructor(public router:Router,private store:Store<any>){
-    this.store.select('name').subscribe((x:string) => this.profileName = x);
-    this.store.select('counter').subscribe((x:number) => this.counter = x);
+    this.store.select((obj) => obj.stateManagementState.profile).subscribe((x:string) => this.profileName = x);
+    this.store.select((obj) => obj.stateManagementState.counter).subscribe((x:number) => this.counter = x);
   }
 
   ngOnInit(){
@@ -63,7 +63,7 @@ export class AppComponent implements DoCheck{
     }
 
   redirectTo(key:any){
-        this.router.navigateByUrl(key, {skipLocationChange: true} )
+        this.router.navigateByUrl(key)
         this.toggleMenu();
   }
 

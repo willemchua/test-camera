@@ -16,6 +16,6 @@ export class PageComponent implements OnInit {
 
   redirectTo(key)
   {
-    this.router.navigateByUrl(key, {skipLocationChange: true} );
+    this.router.navigateByUrl(key);
   }
 }

@@ -2,6 +2,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Rx';
 
+
 @Component({
   selector: 'app-subsubsubcomponent',
   template: `

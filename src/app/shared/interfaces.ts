@@ -13,3 +13,14 @@ export interface Book{
     author:string;
   }
 }
+
+export interface Employee{
+  maleEmployee:number;
+  femaleEmployee:number;
+  totalEmployee?:number;
+}
+
+export interface Search{
+    query:string;
+    maxOutput?:string;
+}

@@ -9,6 +9,8 @@ import { TestComponent } from './test/test.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { StateManagementComponent } from './state-management/state-management.component';
 import { BookSearchComponent } from './book-search/book-search.component';
+import { DashComponent } from './dash/dash.component';
+import { DashFormComponent } from './dash/dash-form/dash-form.component';
 
 const routes: Routes = [
   { path: '', component: PageComponent},
@@ -18,7 +20,15 @@ const routes: Routes = [
   { path: 'test', component: TestComponent},
   { path: 'rxjs', component: RxjsComponent},
   { path: 'state-management', component: StateManagementComponent},
-  { path: 'book-search', component: BookSearchComponent}
+  { path: 'book-search', component: BookSearchComponent},
+  { 
+    path: 'dash', 
+    children:[
+      { path:'', component: DashComponent },
+      { path:'edit', component: DashFormComponent },
+    ]
+  }
+
 ];
 
 @NgModule({

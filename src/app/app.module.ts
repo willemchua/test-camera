@@ -19,11 +19,12 @@ import { SubsubcomponentComponent } from './state-management/subcomponent/subsub
 import { SubsubsubcomponentComponent } from './state-management/subcomponent/subsubcomponent/subsubsubcomponent/subsubsubcomponent.component';
 
 import { StoreModule } from '@ngrx/store';
-import { counterReducer, profileNameReducer, searchReducer } from './reducer/reducer';
+import { reducer } from './app.reducer';
 import { BookSearchComponent } from './book-search/book-search.component';
 import { SearchboxComponent } from './searchbox/searchbox.component';
 
 import { YouTubeAPI } from './state-management/state-management.service';
+import { DashModule } from './dash/dash.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +39,7 @@ import { YouTubeAPI } from './state-management/state-management.service';
     SubsubcomponentComponent,
     SubsubsubcomponentComponent,
     BookSearchComponent,
-    SearchboxComponent
+    SearchboxComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,11 +48,9 @@ import { YouTubeAPI } from './state-management/state-management.service';
     HttpModule,
     AppRoutingModule,
     MomentModule,
-    StoreModule.provideStore({ counter: counterReducer
-      , name: profileNameReducer
-      , search: searchReducer 
-    }),
-    MaterialModule
+    StoreModule.provideStore(reducer),
+    MaterialModule,
+    DashModule
   ],
   providers: [YouTubeAPI],
   bootstrap: [AppComponent]

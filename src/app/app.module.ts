@@ -55,7 +55,6 @@ import { DashComponent } from './dash/dash.component';
       search: searchReducer ,
       youtubeq: youtubeSearchReducer
     }),
-    // MaterialModule
   ],
   providers: [YouTubeAPI],
   bootstrap: [AppComponent]

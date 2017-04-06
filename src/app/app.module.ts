@@ -2,12 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+
 import { MomentModule } from 'angular2-moment/moment.module';
 import { MaterialModule } from '@angular/material';
-
-import { AccordionModule } from 'primeng/primeng';     //accordion and accordion tab
-import { MenuItem } from 'primeng/primeng';            //api
-import { ChartModule } from 'primeng/primeng';
+import { D3Service } from 'd3-ng2-service';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -29,6 +27,8 @@ import { SearchboxComponent } from './searchbox/searchbox.component';
 
 import { YouTubeAPI } from './state-management/state-management.service';
 import { DashComponent } from './dash/dash.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,11 +57,9 @@ import { DashComponent } from './dash/dash.component';
       , name: profileNameReducer
       , search: searchReducer 
     }),
-    MaterialModule,
-    AccordionModule,
-    ChartModule
+    MaterialModule
   ],
-  providers: [YouTubeAPI],
+  providers: [YouTubeAPI, D3Service],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { D3Service, D3, Selection } from 'd3-ng2-service';
 
 @Component({
   selector: 'app-dash',
@@ -6,49 +7,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dash.component.css']
 })
 export class DashComponent implements OnInit {
-  doughnutData:any;
-  lineData:any;
+  private d3: D3;
+  private parentNativeElement: any;
 
-  constructor() { 
-    this.doughnutData = {
-      labels: ['A','B','C'],
-      responsive:true,
-      animation: true,
-      datasets: [
-          {
-              data: [300, 50, 100],
-              backgroundColor: [
-                  "#FF6384",
-                  "#36A2EB",
-                  "#FFCE56"
-              ],
-              hoverBackgroundColor: [
-                  "#FF6384",
-                  "#36A2EB",
-                  "#FFCE56"
-              ]
-          }]    
-      };
-      this.lineData = {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-        datasets: [
-            {
-                label: 'First Dataset',
-                data: [65, 59, 80, 81, 56, 55, 40],
-                fill: false,
-                borderColor: '#4bc0c0'
-            },
-            {
-                label: 'Second Dataset',
-                data: [28, 48, 40, 19, 86, 27, 90],
-                fill: false,
-                borderColor: '#565656'
-            }
-        ]
-    }
+  constructor(element: ElementRef, d3Service: D3Service) { 
+      this.d3 = d3Service.getD3();
+      this.parentNativeElement = element.nativeElement;
   }
 
   ngOnInit() {
+    let d3 = this.d3;
+    let d3ParentElement: Selection<any, any, any, any>;
+
+    if (this.parentNativeElement !== null) {
+        let container = d3.select('.chart').append('svg').attr('width',200).attr('height',200);
+        container.append('circle').attr('cx',50).attr('cy',50).attr('r', 30);
+    }
   }
 
+  draw(){
+  }
 }

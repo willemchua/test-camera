@@ -25,7 +25,7 @@ import { SearchboxComponent } from './searchbox/searchbox.component';
 
 import { YouTubeAPI } from './state-management/state-management.service';
 import { DashModule } from './dash/dash.module';
-import { MenuFormComponent } from './menu-form/menu-form.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +41,6 @@ import { MenuFormComponent } from './menu-form/menu-form.component';
     SubsubsubcomponentComponent,
     BookSearchComponent,
     SearchboxComponent,
-    MenuFormComponent,
   ],
   imports: [
     BrowserModule,

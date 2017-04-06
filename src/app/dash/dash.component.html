@@ -8,3 +8,7 @@ Total Employee: {{totalEmp}}
 
 <a [routerLink]="['edit-menu']"> Edit Menu </a>
 <br><br>
+
+Menu:
+
+<p *ngFor = "let item of menuIndex">{{menu[item]}}</p>

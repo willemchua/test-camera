@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 
-import { ActionTypes } from '../../actions/action';
+import { ActionTypes } from '../../const/action';
 
 @Component({
   selector: 'app-dash-form',

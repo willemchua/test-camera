@@ -6,6 +6,7 @@ import { Store } from "@ngrx/store";
 
 import * as CONST from '../../const/const';
 import { ActionTypes } from '../../const/action';
+import { State } from "../../app.reducer";
 
 @Component({
   selector: 'app-menu-form',
@@ -15,8 +16,13 @@ import { ActionTypes } from '../../const/action';
 export class MenuFormComponent implements OnInit {
 
   menu = CONST.MENU;
+  menuIndex;
 
-  constructor(private router:Router, private store:Store<any>) { }
+  constructor(private router:Router, private store:Store<any>) { 
+    this.store.select((obj:State) => obj.dashState).subscribe((x) => {
+        this.menuIndex = x.menuForm.menu;
+    })
+  }
 
   ngOnInit() {
   }
@@ -35,8 +41,14 @@ export class MenuFormComponent implements OnInit {
 
       return this.router.navigate(['dash']);
     }
-
-
   }
 
+  selectItem(menuItem){
+    if(menuItem === this.menu[this.menuIndex[0]]){
+      console.log(menuItem);
+      return 'selected';
+    }
+    else
+      return 'false';
+  }
 }

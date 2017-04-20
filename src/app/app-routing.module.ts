@@ -10,7 +10,7 @@ import { RxjsComponent } from './rxjs/rxjs.component';
 import { StateManagementComponent } from './state-management/state-management.component';
 import { BookSearchComponent } from './book-search/book-search.component';
 import { DashComponent } from './dash/dash.component';
-import { DashFormComponent } from './dash/form/dash-form.component';
+import { DashFormComponent } from './dash/dash-form/dash-form.component';
 import { MenuFormComponent } from './dash/menu-form/menu-form.component';
 
 const routes: Routes = [

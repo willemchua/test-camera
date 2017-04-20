@@ -1,17 +1,19 @@
-export const MENU = [
-    'Master Data',
-    'Setup',
-    'Company',
-    'Security',
-    'Personnel Admin',
-    'BPJS Ketenagakerjaan',
-    'BPJS Kesehatan',
-    'PPh-21',
-    'Time Management',
-    'Payroll',
-    'Termination',
-    'Approval',
-    'Report',
-    'Audit Trail',
-    'Data Migration'
+let menuFormat: [string, string];
+
+export const MENU:[string, string[]][] = [
+    ['Master Data', ['master-data']],
+    ['Setup', ['setup']],
+    ['Company', ['company']],
+    ['Security', ['security']],
+    ['Personnel Admin', ['personnel-admin']],
+    ['BPJS Ketenagakerjaan', ['bpjs-manpower']],
+    ['BPJS Kesehatan', ['bpjs-healthcare']],
+    ['PPh-21', ['pph-21']],
+    ['Time Management', ['time-management']],
+    ['Payroll', ['payroll']],
+    ['Termination', ['termination']],
+    ['Approval', ['approval']],
+    ['Report', ['report']],
+    ['Audit Trail', ['audit-trail']],
+    ['Data Migration', ['data-migration']] 
 ]

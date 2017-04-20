@@ -9,6 +9,6 @@ Total Employee: {{totalEmp}}
 <a [routerLink]="['edit-menu']"> Edit Menu </a>
 <br><br>
 
-Menu:
+<p>Menu:</p>
 
-<p *ngFor = "let item of menuIndex">{{menu[item]}}</p>
+<p *ngFor = "let index of menuIndex"><a [routerLink]="menu[index][1]"> {{menu[index][0]}} </a></p>

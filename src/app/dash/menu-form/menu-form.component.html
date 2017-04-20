@@ -3,23 +3,25 @@
 <form>
   Menu 1:
   <select #select1>
-    <option *ngFor="let item of menu" value = "{{item}}">{{item}}</option>
+    <div *ngFor="let menuItem of menu; let i = index">
+    <div *ngIf="i == menuIndex[0]">
+    <option >{{menuItem[0]}}</option>
+    </div></div>
   </select>
     <br>
-
   Menu 2:
   <select #select2>
-    <option *ngFor="let item of menu" value = "{{item}}">{{item}}</option>
+    <option *ngFor="let menuItem of menu">{{menuItem[0]}}</option>
   </select>
     <br>
   Menu 3:
   <select #select3>
-    <option *ngFor="let item of menu" value = "{{item}}">{{item}}</option>
+    <option *ngFor="let menuItem of menu">{{menuItem[0]}}</option>
   </select>
     <br>
   Menu 4:
   <select #select4>
-    <option *ngFor="let item of menu" value = "{{item}}">{{item}}</option>
+    <option *ngFor="let menuItem of menu">{{menuItem[0]}}</option>
   </select>
     <br>
   <input type="button" value="Shazam" 

@@ -21,6 +21,10 @@ export interface Employee{
 }
 
 export interface Search{
-    query:string;
-    maxOutput?:string;
+  query:string;
+  maxOutput?:string;
+}
+
+export interface Chat{
+  chat: string;
 }

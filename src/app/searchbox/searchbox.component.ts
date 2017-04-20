@@ -17,18 +17,13 @@ export class SearchboxComponent implements OnInit {
 
   doStuff(input:any)
   {
-    // console.log('Before:');
-    // console.log(this.store.select('search'));
-
     if(typeof input === "number"){
-      //console.log(this.listRes[input]);
       this.store.dispatch({
         type: "UPDATE_MAXRES",
         payload: this.listRes[input]
       })
     }
     else if(typeof input === "string"){
-      //console.log(input);
       if(input)
         this.store.dispatch({
           type: "UPDATE_QUERY",

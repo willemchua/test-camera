@@ -3,25 +3,50 @@
 <form>
   Menu 1:
   <select #select1>
-    <div *ngFor="let menuItem of menu; let i = index">
-    <div *ngIf="i == menuIndex[0]">
-    <option >{{menuItem[0]}}</option>
-    </div></div>
+    <template ngFor let-menuItem [ngForOf]="menu" let-i = "index">
+      <template [ngIf] = "i !== menuIndex[0]">
+        <option>{{menuItem[0]}}</option>
+      </template>
+      <template [ngIf] = "i === menuIndex[0]">
+        <option selected>{{menuItem[0]}}</option>
+      </template>
+    </template>
   </select>
     <br>
   Menu 2:
   <select #select2>
-    <option *ngFor="let menuItem of menu">{{menuItem[0]}}</option>
+    <template ngFor let-menuItem [ngForOf]="menu" let-i = "index">
+      <template [ngIf] = "i !== menuIndex[1]">
+        <option>{{menuItem[0]}}</option>
+      </template>
+      <template [ngIf] = "i === menuIndex[1]">
+        <option selected>{{menuItem[0]}}</option>
+      </template>
+    </template>
   </select>
     <br>
   Menu 3:
   <select #select3>
-    <option *ngFor="let menuItem of menu">{{menuItem[0]}}</option>
+    <template ngFor let-menuItem [ngForOf]="menu" let-i = "index">
+      <template [ngIf] = "i !== menuIndex[2]">
+        <option>{{menuItem[0]}}</option>
+      </template>
+      <template [ngIf] = "i === menuIndex[2]">
+        <option selected>{{menuItem[0]}}</option>
+      </template>
+    </template>
   </select>
     <br>
   Menu 4:
   <select #select4>
-    <option *ngFor="let menuItem of menu">{{menuItem[0]}}</option>
+    <template ngFor let-menuItem [ngForOf]="menu" let-i = "index">
+      <template [ngIf] = "i !== menuIndex[3]">
+        <option>{{menuItem[0]}}</option>
+      </template>
+      <template [ngIf] = "i === menuIndex[3]">
+        <option selected>{{menuItem[0]}}</option>
+      </template>
+    </template>
   </select>
     <br>
   <input type="button" value="Shazam" 

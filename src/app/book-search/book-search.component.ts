@@ -16,21 +16,19 @@ import 'rxjs/add/operator/toPromise';
   providers: [GoogleBookService]
 })
 export class BookSearchComponent implements OnInit {
-  text$: Observable<Search>;
-  books$: Observable<Book[]>;
+  books: Observable<Book[]>;
   
   constructor(private bookService: GoogleBookService, private store: Store<any>) {
   }
 
   ngOnInit() {
     this.store.select((obj:State) => obj.bookSearchState).subscribe((x:Search) => {
-       //console.log(x);
       if(x.query !== "")
-        this.books$ = this.bookService.getData(x).map(res => {
+        this.books = this.bookService.getData(x).map(res => {
           console.log(res);
           return res});
       else
-        this.books$ = Observable.of([]);
+        this.books = Observable.of([]);
     });
   }
 

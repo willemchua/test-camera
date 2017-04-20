@@ -31,7 +31,7 @@ const routes: Routes = [
       { path: 'edit', component: DashFormComponent },
       { path: 'edit-menu', component: MenuFormComponent },
     ]
-  }
+  },
   { path: 'chatbot', component: ChatbotComponent}
 ];
 

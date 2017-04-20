@@ -10,6 +10,7 @@ import { RxjsComponent } from './rxjs/rxjs.component';
 import { StateManagementComponent } from './state-management/state-management.component';
 import { BookSearchComponent } from './book-search/book-search.component';
 import { DashComponent } from './dash/dash.component';
+import { ChatbotComponent } from './chatbot/chatbot.component';
 
 const routes: Routes = [
   { path: '', component: PageComponent},
@@ -20,7 +21,8 @@ const routes: Routes = [
   { path: 'test', component: TestComponent},
   { path: 'rxjs', component: RxjsComponent},
   { path: 'state-management', component: StateManagementComponent},
-  { path: 'book-search', component: BookSearchComponent}
+  { path: 'book-search', component: BookSearchComponent},
+  { path: 'chatbot', component: ChatbotComponent}
 ];
 
 @NgModule({

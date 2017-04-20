@@ -1,6 +1,6 @@
 <select #maxResValue (change) = "doStuff(maxResValue.selectedIndex)">
 <option *ngFor="let maxRes of listRes" value = "{{maxRes}}">{{maxRes}}</option>
 </select>
-<md-input-container>
+<!--<md-input-container>-->
 <input mdInput #searchBox type="text" placeholder="Input your search here" (input) = "doStuff(searchBox.value)"/>
-</md-input-container>
+<!--</md-input-container>-->

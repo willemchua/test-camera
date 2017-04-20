@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { MomentModule } from 'angular2-moment/moment.module';
-import { MaterialModule } from '@angular/material';
+// import { MaterialModule } from '@angular/material';
 
 import { AccordionModule } from 'primeng/primeng';     //accordion and accordion tab
 import { MenuItem } from 'primeng/primeng';            //api
@@ -29,6 +29,7 @@ import { SearchboxComponent } from './searchbox/searchbox.component';
 
 import { YouTubeAPI } from './state-management/state-management.service';
 import { DashComponent } from './dash/dash.component';
+import { ChatbotComponent } from './chatbot/chatbot.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +45,8 @@ import { DashComponent } from './dash/dash.component';
     SubsubsubcomponentComponent,
     BookSearchComponent,
     SearchboxComponent,
-    DashComponent
+    DashComponent,
+    ChatbotComponent
   ],
   imports: [
     BrowserModule,
@@ -57,7 +59,7 @@ import { DashComponent } from './dash/dash.component';
       , name: profileNameReducer
       , search: searchReducer 
     }),
-    MaterialModule,
+    // MaterialModule,
     AccordionModule,
     ChartModule
   ],

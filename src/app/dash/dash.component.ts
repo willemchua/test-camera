@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { ActivatedRoute } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
@@ -29,4 +30,5 @@ export class DashComponent implements OnInit {
 
   ngOnInit() {
   }
+
 }

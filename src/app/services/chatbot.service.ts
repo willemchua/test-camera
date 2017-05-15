@@ -8,13 +8,13 @@ export class ChatbotService {
 
   constructor(private http:Http) { }
 
-  getData(input: Chat):Observable<Chat>{
-    console.log(input);
+  getData(input: Chat):Observable<Response>{
     let chat = input.chat;
+    return this.http.get(`http://localhost:8080/search?query=${chat}`)
+      .map((res:Response) => res.json());
+    };
 
-    return this.http.get(`https://localhost:5000/parse?q=${chat}`)
-        .map(res => {
-        return res.json().items || []});
+
   }
 
-}
+

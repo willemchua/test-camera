@@ -30,6 +30,7 @@ import { SearchboxComponent } from './searchbox/searchbox.component';
 import { YouTubeAPI } from './state-management/state-management.service';
 import { DashModule } from './dash/dash.module';
 import { ChatbotComponent } from './chatbot/chatbot.component';
+import { ChatBoxComponent } from './chatbot/chat-box/chat-box.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { ChatbotComponent } from './chatbot/chatbot.component';
     SubsubsubcomponentComponent,
     BookSearchComponent,
     SearchboxComponent,
-    ChatbotComponent
+    ChatbotComponent,
+    ChatBoxComponent,
   ],
   imports: [
     BrowserModule,

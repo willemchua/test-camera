@@ -15,7 +15,7 @@ const reducers = {
     bookSearchState: fromBookSearch.reducer,
     dashState: fromDash.reducer,
     stateManagementState: fromStateManagement.reducer,
-    chatbotReducer: fromChatbot.reducer
+    chatbotState: fromChatbot.reducer
 }
 
 export const reducer: ActionReducer<State> = combineReducers(reducers);

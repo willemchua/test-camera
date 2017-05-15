@@ -16,30 +16,19 @@ import 'rxjs/add/operator/toPromise';
 })
 export class ChatbotComponent implements OnInit {
 
-  chat: Observable<Chat>;
+  chat;
 
-  constructor(private store:Store<any>, private chatbotService: ChatbotService) { }
-
-  ngOnInit() {
-    this.store.select((obj:State) => obj.chatbotState).subscribe((x: Chat) => {
-      console.log(x);
-      if(x.chat !== '')
-        this.chat = this.chatbotService.getData(x).map(res => {
-          console.log(res);
-          return res;
-        });
-      else
-        this.chat = Observable.of({chat: ''});
-    });
+  constructor(private store:Store<any>, private chatbotService: ChatbotService) { 
   }
 
-  doStuff(input: string) {
-    console.log('ini jalan')
-    this.store.dispatch({
-      type: 'UPDATE',
-      payload: input
-    })
-
+  ngOnInit() {
+    this.store.select((obj:State) => {return obj.chatbotState}).subscribe((x: Chat) => {
+      if(x.chat !== '')
+        this.chat = this.chatbotService.getData(x).map((x: any) => 
+          {return x.title});
+      else
+        this.chat = '';
+    });
   }
 
 }

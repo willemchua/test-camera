@@ -31,6 +31,7 @@ import { YouTubeAPI } from './state-management/state-management.service';
 import { DashModule } from './dash/dash.module';
 import { ChatbotComponent } from './chatbot/chatbot.component';
 import { ChatBoxComponent } from './chatbot/chat-box/chat-box.component';
+import { LocationComponent } from './location/location.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { ChatBoxComponent } from './chatbot/chat-box/chat-box.component';
     SearchboxComponent,
     ChatbotComponent,
     ChatBoxComponent,
+    LocationComponent,
   ],
   imports: [
     BrowserModule,

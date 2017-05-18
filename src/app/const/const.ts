@@ -15,5 +15,5 @@ export const MENU:[string, string[]][] = [
     ['Approval', ['approval']],
     ['Report', ['report']],
     ['Audit Trail', ['audit-trail']],
-    ['Data Migration', ['data-migration']] 
+    ['Data Migration', ['data-migration']]
 ]

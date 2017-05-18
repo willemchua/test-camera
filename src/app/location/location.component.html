@@ -1,3 +1,25 @@
-{{latitude}} || {{longitude}}
+<button (click)='onCurrentLocation()'> Use Current Location </button>
+<button (click)='onCustomLocation()'> Use Custom Location </button>
 
-<button (click)="onClick()"> Click me </button>
+<div *ngIf="currentLocation">
+
+    <p> Your Current Location </p>
+    <p> {{currentAddress}} </p>
+
+    <p> Nearest Hospital </p>
+    <p> {{nearestAddress}} </p>
+
+</div>
+
+<div *ngIf="customLocation">
+
+    <form>
+        <select #select>
+            <option *ngFor="let city of cities">{{city}}</option>
+        </select>
+        <input type="button" value="Search" (click) = "searchHospitals(select.selectedIndex)"/>
+    </form>
+
+    <p> {{results}} </p>
+
+</div>

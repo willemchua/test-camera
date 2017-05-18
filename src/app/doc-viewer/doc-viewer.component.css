@@ -1,0 +1,19 @@
+:host {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  margin: -8px;
+  margin-top: -10px;  
+}
+
+.pdf-viewer {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  margin: -8px;
+}
+
+#the-canvas { 
+  display: block;
+  margin: -8px;
+}

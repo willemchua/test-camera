@@ -32,6 +32,9 @@ import { DashModule } from './dash/dash.module';
 import { ChatbotComponent } from './chatbot/chatbot.component';
 import { ChatBoxComponent } from './chatbot/chat-box/chat-box.component';
 import { LocationComponent } from './location/location.component';
+import { PdfViewerComponent } from 'ng2-pdf-viewer';
+import { DocViewerComponent } from "./doc-viewer/doc-viewer.component";
+import { PdfDisplayComponent } from './doc-viewer/pdf-display/pdf-display.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +54,9 @@ import { LocationComponent } from './location/location.component';
     ChatbotComponent,
     ChatBoxComponent,
     LocationComponent,
+    PdfViewerComponent,
+    DocViewerComponent,
+    PdfDisplayComponent
   ],
   imports: [
     BrowserModule,

@@ -14,6 +14,7 @@ import { DashFormComponent } from './dash/dash-form/dash-form.component';
 import { MenuFormComponent } from './dash/menu-form/menu-form.component';
 import { ChatbotComponent } from './chatbot/chatbot.component';
 import { LocationComponent } from "./location/location.component";
+import { DocViewerComponent } from "./doc-viewer/doc-viewer.component";
 
 const routes: Routes = [
   { path: '', component: PageComponent},
@@ -34,7 +35,8 @@ const routes: Routes = [
     ]
   },
   { path: 'chatbot', component: ChatbotComponent },
-  { path: 'location', component: LocationComponent }
+  { path: 'location', component: LocationComponent },
+  { path: 'doc-viewer', component: DocViewerComponent }
 ];
 
 @NgModule({

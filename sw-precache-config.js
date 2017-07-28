@@ -1,7 +1,8 @@
 module.exports = {
-    staticFileGLobs: [
-        '/home',
-        '/',
-        '/camera',
+    staticFileGlobs: [
+        'dist/index.html',
+        'dist/**.js',
+        'dist/**.css'
     ],
+    stripPrefix: 'dist'
 };

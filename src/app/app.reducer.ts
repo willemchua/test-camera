@@ -1,4 +1,6 @@
 import { ActionReducer, Action, combineReducers } from '@ngrx/store';
+import { compose } from '@ngrx/core/compose';
+
 import * as fromBookSearch from './book-search/book-search.reducer';
 import * as fromDash from './dash/dash.reducer';
 import * as fromStateManagement from './state-management/subcomponent/subsubcomponent/subsubsubcomponent/subsubsubcomponent.reducer';
@@ -18,4 +20,8 @@ const reducers = {
     chatbotState: fromChatbot.reducer
 }
 
-export const reducer: ActionReducer<State> = combineReducers(reducers);
+export const prodReducer: ActionReducer<State> = combineReducers(reducers);
+
+export function reducer(state: any, action: any) {
+    return prodReducer(state, action);
+}

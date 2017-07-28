@@ -738,7 +738,7 @@ html[dir='ltr'] .doorHangerRight:before {
 #toolbarViewerMiddle {
   position: absolute;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-40%);
 }
 
 html[dir='ltr'] #toolbarViewerLeft,

@@ -1,0 +1,72 @@
+<md-card>
+  <md-card-content>
+    <form>
+
+    <md-input-container>
+      <input #name mdInput placeholder="Name">
+    </md-input-container>
+
+    <md-input-container>
+      <input #password mdInput type="password" placeholder="Password">
+    </md-input-container>
+      
+    <button md-raised-button (click)="submit(name.value, password.value)"> Submit </button>
+
+    </form>
+  </md-card-content>
+</md-card>
+
+<md-card>
+  <md-card-content>
+    <p *ngIf="userName">
+      Username: {{userName}}
+    </p>
+    <p *ngIf="userPass">
+      Password: {{userPass}}
+    </p>
+  </md-card-content>
+</md-card>
+
+<md-card>
+  <md-tab-group>
+    <md-tab label="Listing">
+    </md-tab>
+    <md-tab label="Search">
+      <form>
+      <p>
+        <md-input-container>
+          <input #searchName mdInput type="text" placeholder="Name" required>
+        </md-input-container>
+      </p>
+      <p>
+        <md-select [(ngModel)]="selectedJob" name="jobTitle" placeholder="Job Title">
+          <md-option *ngFor="let jobTitle of jobTitles" [value]="jobTitle">
+            {{jobTitle}}
+          </md-option>
+        </md-select>
+      </p>
+      <p>
+        <button md-raised-button> Submit </button>
+      </p>
+      </form>
+    </md-tab>
+  </md-tab-group>
+</md-card>
+
+<md-card>
+  <md-card-content>
+    <p>
+      Searched Name: {{searchName.value}}
+    </p>
+    <p>
+      Searched Job: {{selectedJob}}
+    </p>
+  </md-card-content>
+</md-card>
+
+<md-grid-list cols="2" rowHeight="2:1">
+  <md-grid-tile>1</md-grid-tile>
+  <md-grid-tile>2</md-grid-tile>
+  <md-grid-tile>3</md-grid-tile>
+  <md-grid-tile>4</md-grid-tile>
+</md-grid-list>

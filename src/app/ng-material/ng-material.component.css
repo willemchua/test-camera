@@ -1,0 +1,11 @@
+md-card {
+    margin: 20px;
+}
+
+md-tab>form>p {
+    padding-top: 30px;
+}
+
+md-grid-tile {
+  background: lightblue;
+}

@@ -8,9 +8,9 @@ const API_TOKEN = 'AIzaSyAJk1xUI72YYfBMgEc84gjHUX-k2AN6-B0';
 export class YouTubeAPI {
   constructor(private http:Http){}
   
-  search(query){
-    return this.http.get(`${BASE_URL}?q=${query}&part=snippet&key=${API_TOKEN}`)
-      .map((res:Response) => res.json())
-      .map(json => json.items);
-  }
+  // search(query){
+  //   return this.http.get(`${BASE_URL}?q=${query}&part=snippet&key=${API_TOKEN}`)
+  //     .map((res:Response) => res.json())
+  //     .map(json => json.items);
+  // }
 }

@@ -17,7 +17,7 @@ import { TestComponent } from './test/test.component';
 import { CalendarPageComponent } from "./calendar/calendar.component";
 import { CalendarComponent } from "angular2-fullcalendar/src/calendar/calendar";
 import { RxjsComponent } from './rxjs/rxjs.component';
-import { StateManagementComponent } from './state-management/state-management.component';
+// import { StateManagementComponent } from './state-management/state-management.component';
 import { SubcomponentComponent } from './state-management/subcomponent/subcomponent.component';
 import { SubsubcomponentComponent } from './state-management/subcomponent/subsubcomponent/subsubcomponent.component';
 import { SubsubsubcomponentComponent } from './state-management/subcomponent/subsubcomponent/subsubsubcomponent/subsubsubcomponent.component';
@@ -35,6 +35,7 @@ import { LocationComponent } from './location/location.component';
 import { PdfViewerComponent } from 'ng2-pdf-viewer';
 import { DocViewerComponent } from "./doc-viewer/doc-viewer.component";
 import { PdfDisplayComponent } from './doc-viewer/pdf-display/pdf-display.component';
+import { NgMaterialComponent } from './ng-material/ng-material.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,7 @@ import { PdfDisplayComponent } from './doc-viewer/pdf-display/pdf-display.compon
     CalendarPageComponent,
     CalendarComponent,
     RxjsComponent,
-    StateManagementComponent,
+    // StateManagementComponent,
     SubcomponentComponent,
     SubsubcomponentComponent,
     SubsubsubcomponentComponent,
@@ -56,7 +57,8 @@ import { PdfDisplayComponent } from './doc-viewer/pdf-display/pdf-display.compon
     LocationComponent,
     PdfViewerComponent,
     DocViewerComponent,
-    PdfDisplayComponent
+    PdfDisplayComponent,
+    NgMaterialComponent
   ],
   imports: [
     BrowserModule,
